@@ -1,4 +1,5 @@
-﻿using System;
+﻿cmd
+using System;
 
 class Program
 {
