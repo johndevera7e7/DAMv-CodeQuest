@@ -47,7 +47,7 @@ class Program
                 Console.WriteLine(op);
             }
 
-
+        
         } while (op != 0);
     }
 }
