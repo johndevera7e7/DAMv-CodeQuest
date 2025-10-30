@@ -80,7 +80,7 @@ public class Program
                     }
                     Console.WriteLine(Rank);
                     Console.WriteLine(Title);
-                    break;
+                break;
                  
             }
 
