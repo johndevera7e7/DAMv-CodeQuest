@@ -22,7 +22,7 @@ public class Program
 
         Console.WriteLine("What's your name, oh destined one?");
         WizardName = Console.ReadLine();
-
+         
         do
         {
             op = 0;
