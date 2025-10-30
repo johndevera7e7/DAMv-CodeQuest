@@ -17,7 +17,7 @@ public class Program
         string WizardName;
         string Rank = "";
         string Title = "";
-
+          
         Random rnd = new Random();
 
         Console.WriteLine("What's your name, oh destined one?");
