@@ -14,7 +14,6 @@ public class Program
         const string InputErrorMessage = "Invalid input. Please enter a number between 0 and 3.";
 
         int power, hour, totalpower = 1, op = 0;
-        bool validInput;
         string WizardName;
         string Rank = "";
         string Title = "";
@@ -33,8 +32,6 @@ public class Program
             Console.WriteLine(MenuOption3);
             Console.WriteLine(MenuOptionExit);
             Console.Write(MenuPrompt);
-
-            validInput = true;
 
             try
             {
