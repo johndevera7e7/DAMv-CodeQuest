@@ -13,7 +13,7 @@ public class Program
         const string MenuPrompt = "Choose an option (1-3) - (0) to exit: ";
         const string InputErrorMessage = "Invalid input. Please enter a number between 0 and 3.";
 
-        int power, hour, totalpower = 1, op = 0;
+        int power, hour,totalpower = 1, op = 0;
         string WizardName;
         string Rank = "";
         string Title = "";
