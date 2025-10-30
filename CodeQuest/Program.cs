@@ -16,6 +16,8 @@ public class Program
         int power, hour, totalpower = 1, op = 0;
         bool validInput;
         string WizardName;
+        string Rank = "";
+        string Title = "";
 
         Random rnd = new Random();
 
@@ -42,51 +44,47 @@ public class Program
             catch (FormatException)
             {
                 Console.WriteLine(InputErrorMessage);
-                validInput = false;
             }
             catch (Exception)
             {
                 Console.WriteLine(InputErrorMessage);
-                validInput = false;
             }
 
-            if (validInput)
+            switch (op)
             {
-                Console.WriteLine(op);
-            }
-
-            if (op == 1)
-            {
-                for (int i = 1; i < 6; i++)
-                {
-                    hour= rnd.Next(7,11);
-                    power = rnd.Next(11);
-                    totalpower = totalpower + power;
-                    Console.WriteLine("Dia " + i + ": " + WizardName + ", after meditating for " + hour + " hours, you gained " + power + " points of power, your power is now of " + totalpower + "!" );
-                    Console.WriteLine(AnyKeyContinue);
-                    Console.ReadLine();
-                }
-
-                if (totalpower > 45)
-                {
-                    Console.WriteLine("You gained the rank 'Arcane Master'!");
-                    Console.WriteLine("You gained the title of 'ITB-Wizard the grey'.");
-                }
-                else if (totalpower > 40)
-                {
-                    Console.WriteLine("Wow! You can summon dragons without burning the lab!");
-                    Console.WriteLine("You gained the title of 'Elarion of the embers'.");
-                }
-                else if (totalpower > 30)
-                {
-                    Console.WriteLine("You're a summoner of magic breezes");
-                    Console.WriteLine("You gained the title of 'Arka Nullpointer'.");
-                }
-                else if (totalpower > 20)
-                {
-                    Console.WriteLine("You still confuse your wand with a spoon.");
-                    Console.WriteLine("You gained the title of 'Zyn the bugged one'.");
-                }
+                case 1:
+                    for (int i = 1; i < 6; i++)
+                    {
+                        hour= rnd.Next(7,11);
+                        power = rnd.Next(11);
+                        totalpower = totalpower + power;
+                        Console.WriteLine("Dia " + i + ": " + WizardName + ", after meditating for " + hour + " hours, you gained " + power + " points of power, your power is now of " + totalpower + "!" );
+                        Console.WriteLine(AnyKeyContinue);
+                        Console.ReadLine();
+                    }
+                    switch (totalpower)
+                    {
+                        case > 45:
+                            Rank = ("You gained the rank 'Arcane Master'!");
+                            Title = ("You gained the title of 'ITB-Wizard the grey'.");
+                            break;
+                        case > 40:
+                            Rank = ("Wow! You can summon dragons without burning the lab!");
+                            Title = ("You gained the title of 'Elarion of the embers'.");
+                            break;
+                        case > 30:
+                            Rank = ("You're a summoner of magic breezes");
+                            Title = ("You gained the title of 'Arka Nullpointer'.");
+                            break;
+                        case > 20:
+                            Rank = ("You still confuse your wand with a spoon.");
+                            Title = ("You gained the title of 'Zyn the bugged one'.");
+                            break;
+                    }
+                    Console.WriteLine(Rank);
+                    Console.WriteLine(Title);
+                    break;
+                 
             }
 
 
