@@ -107,7 +107,7 @@ public class Program
                                 if (doorinput == doorpsswd)
                                 {
                                     doors--;
-                                    
+                                    lives = 3;
                                     Console.WriteLine("Correct!");
                                 }
                                 else
