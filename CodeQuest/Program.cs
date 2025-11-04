@@ -94,6 +94,7 @@ public class Program
                     Console.WriteLine(DungeonWelcome);
                     doors = 3;
                     lives = 3;
+                    DungeonLose = false;
                     do
                     {
                         if (lives > 0)
@@ -130,14 +131,8 @@ public class Program
                             DungeonLose = true;
                         }
                     } while (doors > 0 && !DungeonLose);
-                    if (DungeonLose)
-                    {
-                        Console.WriteLine(DungeonLost);
-                    }
-                    else
-                    {
-                        Console.WriteLine(DungeonWin);
-                    }
+                    Console.WriteLine(DungeonLose ? DungeonLost : DungeonWin);
+
                 break;
             }
 
