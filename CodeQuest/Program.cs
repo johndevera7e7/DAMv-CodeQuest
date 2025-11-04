@@ -152,10 +152,14 @@ public class Program
                             {
                                 excavations--;
                                 bits = rnd.Next(0, 51);
-                                Console.WriteLine(bits > 4 ? (MineResult, bits): MineLose);
                                 if (bits > 4)
                                 {
+                                    Console.WriteLine(MineResult,bits);
                                     totalbits = totalbits + bits;
+                                }
+                                else
+                                {
+                                    Console.WriteLine(MineLose);
                                 }
                             }
                         }
