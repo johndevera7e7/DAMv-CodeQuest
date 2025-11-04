@@ -4,6 +4,8 @@ public class Program
 {
     public static void Main()
     {
+        const string MineTotalBitsLow = "Your GPU is still integrated, time to conquer another dungeon!";
+        const string MineTotalBits200 = "You've unlocked the golden GPU! Now your enchantments go over 120 FPS!";
         const string MineExcavations = "You've got {0} excavations remaining";
         const string MineLose = "Not your lucky day, you gained 0 bits";
         const string MineResult = "You gained {0} bits!";
@@ -140,11 +142,13 @@ public class Program
                       
                 break;
                 case 3:
+                    excavations = 5;
+                    totalbits = 0;
                     Console.WriteLine(MineWelcome);
                     do
                     {
                         Console.WriteLine(MineInput);
-                        Console.WriteLine(MineExcavations, excavations);
+                        
                         try
                         {
                             input = Convert.ToInt32(Console.ReadLine());
@@ -171,7 +175,10 @@ public class Program
                         {
                             Console.WriteLine(InputErrorMessage);
                         }
+                        Console.WriteLine(MineExcavations, excavations);
+                        
                     } while (input != 0 && excavations > 0);
+                    Console.WriteLine(totalbits > 200 ? MineTotalBits200 : MineTotalBitsLow);
                 break;
             }
 
