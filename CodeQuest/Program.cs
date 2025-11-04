@@ -166,7 +166,7 @@ public class Program
                                     Console.WriteLine(MineLose);
                                 }
                             }
-                        }
+                        } 
                         catch (FormatException)
                         {
                             Console.WriteLine(InputErrorMessage);
