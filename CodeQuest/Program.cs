@@ -12,16 +12,17 @@ public class Program
         const string MenuOptionExit = "0. Exit game";
         const string MenuPrompt = "Choose an option (1-3) - (0) to exit: ";
         const string InputErrorMessage = "Invalid input. Please enter a number between 0 and 3.";
+        const string MeditationMessage = "Dia {0} :  {1}, after meditating for {2} hours, you gained {3} points of power, your power is now of {4}!";
 
-        int power,hour,totalpower = 1, op = 0;
-        string WizardName;
-        string Rank = "";
-        string Title = "";
+        int power,hour,totalpower = 1, op = 0, lives = 3;
+        string wizardname;
+        string rank = "";
+        string title = "";
           
         Random rnd = new Random();
 
         Console.WriteLine("What's your name, oh destined one?");
-        WizardName = Console.ReadLine();
+        wizardname = Console.ReadLine();
          
         do
         {
@@ -55,32 +56,33 @@ public class Program
                         hour= rnd.Next(7,11);
                         power = rnd.Next(11);
                         totalpower = totalpower + power;
-                        Console.WriteLine("Dia " + i + ": " + WizardName + ", after meditating for " + hour + " hours, you gained " + power + " points of power, your power is now of " + totalpower + "!" );
+                        Console.WriteLine(MeditationMessage, i, wizardname, hour, power, totalpower);
                         Console.WriteLine(AnyKeyContinue);
                         Console.ReadLine();
                     }
                     switch (totalpower)
                     {
                         case > 45:
-                            Rank = ("You gained the rank 'Arcane Master'!");
-                            Title = ("You gained the title of 'ITB-Wizard the grey'.");
+                            rank = ("You gained the rank 'Arcane Master'!");
+                            title = ("You gained the title of 'ITB-Wizard the grey'.");
                             break;
                         case > 40:
-                            Rank = ("Wow! You can summon dragons without burning the lab!");
-                            Title = ("You gained the title of 'Elarion of the embers'.");
+                            rank = ("Wow! You can summon dragons without burning the lab!");
+                            title = ("You gained the title of 'Elarion of the embers'.");
                             break;
                         case > 30:
-                            Rank = ("You're a summoner of magic breezes");
-                            Title = ("You gained the title of 'Arka Nullpointer'.");
+                            rank = ("You're a summoner of magic breezes");
+                            title = ("You gained the title of 'Arka Nullpointer'.");
                             break;
                         case > 20:
-                            Rank = ("You still confuse your wand with a spoon.");
-                            Title = ("You gained the title of 'Zyn the bugged one'.");
+                            rank = ("You still confuse your wand with a spoon.");
+                            title = ("You gained the title of 'Zyn the bugged one'.");
                             break;
                     }
-                    Console.WriteLine(Rank);
-                    Console.WriteLine(Title);
-                break;
+                    Console.WriteLine(rank);
+                    Console.WriteLine(title);
+                    break;
+                
                  
             }
 
