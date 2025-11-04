@@ -4,6 +4,11 @@ public class Program
 {
     public static void Main()
     {
+        const string MineExcavations = "You've got {0} excavations remaining";
+        const string MineLose = "Not your lucky day, you gained 0 bits";
+        const string MineResult = "You gained {0} bits!";
+        const string MineInput = "Wanna give it a try? (1 = yes / 0 = no)";
+        const string MineWelcome = "Time to mine some shiny bits!";
         const string DungeonWin = "You conquered the legendary dragon's dungeon!";
         const string DungeonLost = "The dragon detected your presence and kicked you from the server!";
         const string DungeonWelcome = "Welcome to the dungeon of the legendary dragon: RAMon!";
@@ -21,7 +26,7 @@ public class Program
         const string MeditationMessage = "Dia {0} :  {1}, after meditating for {2} hours, you gained {3} points of power, your power is now of {4}!";
 
 
-        int doorinput = 0,doorpsswd,power,hour,totalpower = 1,op = 0, lives = 3, doors = 3;
+        int input = 0,doorpsswd,power,hour,totalpower = 1,op = 0, lives = 3, doors = 3, excavations = 5, bits, totalbits =0;
         string wizardname;
         string Rank = "";
         string Title = "";
@@ -89,7 +94,7 @@ public class Program
                     }
                     Console.WriteLine(Rank);
                     Console.WriteLine(Title);
-                    break;
+                break;
                 case 2:
                     Console.WriteLine(DungeonWelcome);
                     doors = 3;
@@ -104,8 +109,8 @@ public class Program
                             Console.WriteLine(DungeonInput);
                             try
                             {
-                                doorinput = Convert.ToInt32(Console.ReadLine());
-                                if (doorinput == doorpsswd)
+                                input = Convert.ToInt32(Console.ReadLine());
+                                if (input == doorpsswd)
                                 {
                                     doors--;
                                     lives = 3;
@@ -133,6 +138,36 @@ public class Program
                     } while (doors > 0 && !DungeonLose);
                     Console.WriteLine(DungeonLose ? DungeonLost : DungeonWin);
                       
+                break;
+                case 3:
+                    Console.WriteLine(MineWelcome);
+                    do
+                    {
+                        Console.WriteLine(MineInput);
+                        Console.WriteLine(MineExcavations, excavations);
+                        try
+                        {
+                            input = Convert.ToInt32(Console.ReadLine());
+                            if (input == 1)
+                            {
+                                excavations--;
+                                bits = rnd.Next(0, 51);
+                                Console.WriteLine(bits > 4 ? (MineResult, bits): MineLose);
+                                if (bits > 4)
+                                {
+                                    totalbits = totalbits + bits;
+                                }
+                            }
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine(InputErrorMessage);
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine(InputErrorMessage);
+                        }
+                    } while (input != 0 && excavations > 0);
                 break;
             }
 
