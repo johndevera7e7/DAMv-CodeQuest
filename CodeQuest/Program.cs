@@ -132,7 +132,7 @@ public class Program
                         }
                     } while (doors > 0 && !DungeonLose);
                     Console.WriteLine(DungeonLose ? DungeonLost : DungeonWin);
-                     
+                      
                 break;
             }
 
